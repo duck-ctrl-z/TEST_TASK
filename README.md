@@ -20,6 +20,52 @@
 |---------|----------|
 | 🔍 **Фильтрация задач** | Фильтр "Все / Активные / Выполненные" |
 | 📊 **Статистика** | Счетчики общего количества, выполненных и активных задач |
-| ⌨️ **Горячие клавиши** | Закрытие панели по клавише Escape |
 | 🔒 **Блокировка скролла** | Запрет прокрутки фона при открытой панели |
-| 🖱️ **Управление курсором** | Отсутствие мигающей палочки на тексте (кроме описания) |
+
+## 🛠 Технологии
+
+| Технология | Версия | Назначение |
+|------------|--------|------------|
+| **React** | 18.2.0 | Библиотека для построения интерфейса |
+| **TypeScript** | 5.0.0 | Типизация кода, предотвращение ошибок |
+| **Axios** | 1.6.0 | HTTP-клиент для запросов к API |
+| **CSS Modules** | - | Изоляция стилей компонентов |
+| **JSONPlaceholder** | - | Тестовое REST API |
+
+
+## 📁 Структура проекта
+task-list-app/
+├── public/
+│ ├── index.html
+│ └── ...
+├── src/
+│ ├── components/
+│ │ ├── FilterBar/
+│ │ │ ├── FilterBar.tsx
+│ │ │ └── FilterBar.module.css
+│ │ ├── TaskCard/
+│ │ │ ├── TaskCard.tsx
+│ │ │ ├── TaskCard.module.css
+│ │ │ └── TaskDetails.tsx
+│ │ ├── TaskList/
+│ │ │ ├── TaskList.tsx
+│ │ │ └── TaskList.module.css
+│ │ ├── TaskSidebar/
+│ │ │ ├── TaskSidebar.tsx # Боковая панель
+│ │ │ └── TaskSidebar.module.css # Стили панели
+│ │ └── UI/
+│ │ ├── Button/
+│ │ ├── Loader/
+│ │ └── ErrorMessage/
+│ ├── hooks/
+│ │ └── useTasks.ts # Логика приложения
+│ ├── services/
+│ │ └── api.ts # Работа с API
+│ ├── types/
+│ │ └── index.ts # TypeScript типы
+│ ├── App.tsx
+│ ├── App.module.css
+│ └── index.tsx
+├── package.json
+├── tsconfig.json
+└── README.md
