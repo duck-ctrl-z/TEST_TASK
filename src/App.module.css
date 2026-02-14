@@ -1,0 +1,150 @@
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4ade5e 0%, #d9e865 100%);
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: headerAppear 0.3s ease forwards;
+}
+
+@keyframes headerAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.headerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 10px 0;
+  font-size: 32px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: default;
+  user-select: none;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.9;
+  cursor: default;
+  user-select: none;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes statsAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat {
+  color: #4a5568;
+  font-size: 14px;
+  cursor: default;
+  user-select: none;
+}
+
+.stat strong {
+  color: #4ade5e;
+  font-size: 18px;
+  margin-left: 5px;
+  cursor: default;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: scale(0.95);
+  animation: emptyStateAppear 0.3s ease forwards;
+}
+
+@keyframes emptyStateAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.emptyMessage {
+  margin: 0;
+  color: #666;
+  font-size: 18px;
+  cursor: default;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

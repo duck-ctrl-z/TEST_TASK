@@ -1,0 +1,164 @@
+.card, 
+.card * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(135deg, #4ade5e 0%, #d9e865 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px) translateX(-4px);
+  box-shadow: 8px 8px 20px rgba(74, 222, 94, 0.25);
+}
+
+.card.selected {
+  border-color: #4ade5e;
+  background: linear-gradient(to right, #ffffff, #f0fff4);
+  transform: translateX(-8px);
+  box-shadow: 12px 12px 24px rgba(74, 222, 94, 0.3);
+}
+
+.card.selected::before {
+  opacity: 1;
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Кнопка статуса */
+.statusButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  user-select: none;
+}
+
+.statusButton.pending {
+  border-color: #ff9800;
+  color: #ff9800;
+}
+
+.statusButton.pending:hover {
+  background-color: #fff3e0;
+  transform: scale(1.15) rotate(90deg);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.statusButton.completed {
+  border-color: #4caf50;
+  color: #4caf50;
+  background-color: #e8f5e8;
+}
+
+.statusButton.completed:hover {
+  background-color: #c8e6c9;
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Информация о задаче */
+.taskInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.taskTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1f36;
+  line-height: 1.4;
+  cursor: default;
+  user-select: none;
+}
+
+.taskMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusBadge {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  cursor: default;
+  user-select: none;
+}
+
+.statusBadge.pending {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  color: #f57c00;
+}
+
+.statusBadge.completed {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  color: #2e7d32;
+}
+
+@media (max-width: 768px) {
+  .cardContent {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .statusButton {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .taskTitle {
+    font-size: 16px;
+  }
+
+  .taskMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

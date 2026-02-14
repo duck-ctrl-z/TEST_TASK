@@ -1,0 +1,17 @@
+.taskList {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .taskList {
+    padding: 0 10px;
+  }
+}
